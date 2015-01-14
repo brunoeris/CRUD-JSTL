@@ -1,0 +1,30 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13/01/2015, 01:27:58
+    Author     : fromd_000
+*/
+
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: "Segoe UI","Segoe WP","Segoe Regular", sans-serif;
+}
+
+.navbar {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.configlink{
+    cursor: pointer;
+    
+}
+
+.form-signin-heading{
+    border-radius: 10%;
+    
+}
