@@ -39,11 +39,11 @@
                     <h2 class="form-signin-heading text-center text-uppercase">Gerenciador de Loja</h2>
                 
                 
-                <form class="form-signin text-center" action="actions/validalogin.jsp" role="form" method="post">                    
-                    <input type="text" name="usuario" class="form-control" placeholder="Digite seu nome de usuário" required autofocus>
-                    <input type="password" name="senha" class="form-control" placeholder="Digite sua senha" required>
+                <form class="form-signin text-center" action="actions/login.jsp" role="form" method="post">                    
+                    <input type="text" name="login" class="form-control" placeholder="Digite seu nome de usuário" required autofocus>
+                    <input type="password" name="password" class="form-control" placeholder="Digite sua senha" required>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">ENTRAR</button>
-                    <a class="btn btn-lg btn-link " href="cadastroloja.jsp">CADASTRAR</a>
+                    <a class="btn btn-lg btn-link " href="cad_users.jsp">CADASTRAR</a>
                 </form>
             </div>
             

@@ -6,27 +6,26 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Autenticação</title>
   </head>
   <body>
-    <c:if test="${ empty param.usuario or empty param.senha}">
+    <c:if test="${ empty param.login or empty param.password}">
       <c:redirect url="../index.jsp" >
-              <c:param name="errMsg" value="Please Enter UserName and Password" />
+              <c:param name="errMsg" value="Digite seu usuário e senha." />
       </c:redirect>
        
     </c:if>
      
-    <c:if test="${not empty param.usuario and not empty param.senha}">
+    <c:if test="${not empty param.login and not empty param.password}">
       <s:setDataSource var="ds" driver="com.mysql.jdbc.Driver"
-                       url="jdbc:mysql://localhost/projetojstl"
+                       url="jdbc:mysql://localhost/infostore"
                        user="root" password=""/>
- 
+      
       <s:query dataSource="${ds}" var="selectQ">
-        select count(*) as kount from loja
-        where usuario = ?
-        and senha = ?
-        <s:param value="${param.usuario}"/>
-        <s:param value="${param.senha}"/>
+        select count(*) as kount from usuarios
+        where user_login = ?
+        and user_password = ?
+        <s:param value="${param.login}"/>
+        <s:param value="${param.password}"/>
       </s:query>
  
       <c:forEach items="${selectQ.rows}" var="r">
@@ -35,19 +34,19 @@
           <c:when test="${r.kount gt 0}">
               
               <s:query dataSource="${ds}" var="result">
-                select * from loja
-                where usuario = ?
-                and senha = ?
-                <s:param value="${param.usuario}"/>
-                <s:param value="${param.senha}"/>
+                select * from usuarios
+                where user_login = ?
+                and user_password = ?
+                <s:param value="${param.login}"/>
+                <s:param value="${param.password}"/>
               </s:query>
               <c:forEach var="row" items="${result.rows}">
                 <c:set scope="session"
-                   var="loginUser"
-                   value="${row.nome}"/>  
+                   var="user_login"
+                   value="${row.user_login}"/>  
                 <c:set scope="session"
-                   var="idLoja"
-                   value="${row.id}"/>  
+                   var="user_id"
+                   value="${row.user_id}"/>  
               </c:forEach>
                 
             

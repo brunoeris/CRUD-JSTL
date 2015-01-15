@@ -1,9 +1,3 @@
-<%-- 
-    Document   : produtos
-    Created on : 13/01/2015, 00:33:05
-    Author     : fromd_000
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="java.io.*,java.util.*,java.sql.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -18,7 +12,7 @@
 
     <title>DASHBOARD - LOJA</title>
 
- <link rel="stylesheet" href="css/reset.css"/>
+  <link rel="stylesheet" href="css/reset.css"/>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css"/>
     <link rel="stylesheet" href="css/fontawesome/css/font-awesome.min.css"/>
@@ -54,8 +48,8 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="text-center"><a class="configlink" onclick="config(${sessionScope['idLoja']});"><i class="fa fa-gears"></i></a></li>   
-              <li class="active text-center"><a href="produtos.jsp">Produtos</a></li>
+              <li class="text-center"><a class="configlink" onclick="config(${sessionScope['user_id']});"><i class="fa fa-gears"></i></a></li>   
+              <li class="text-center"><a href="produtos.jsp">Produtos</a></li>
               <li class="text-center"><a href="funcionarios.jsp">Funcionários</a></li>
               <li class="text-center"><a href="clientes.jsp">Clientes</a></li>
             </ul>
@@ -65,13 +59,13 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
-      
 
+      <!-- Main component for a primary marketing message or call to action -->
       <div class="container">
           <div class="row">
               <blockquote class="col-md-12"> 
-                  <h2>Produtos<br><small>Gerencie os produtos da sua loja.</small></h2>
-                  <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Cadastrar Produto</button>
+                  <h2>Funcionários<br><small>Gerencie os funcionários da sua loja.</small></h2>
+                  <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Cadastrar Funcionário</button>
               </blockquote>
           </div>
         
@@ -83,15 +77,18 @@
     <section>
         <div class="container">
             <div class="row">
+
                 <div class="col-md-12">
-                    <div class="table-responsive">
+                     <div class="table-responsive">
                         <table class="table">
                           <thead>
                             <tr>
                               <th>#</th>
                               <th>Nome</th>
-                              <th>Descrição</th>
-                              <th>Preço</th>
+                              <th>CPF</th>
+                              <th>Email</th>
+                              <th>Telefone</th>
+                              <th>Cargo</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -100,17 +97,19 @@
                                                 user="root"  password=""/>
 
                              <sql:query dataSource="${dbsource}" var="result">
-                                 SELECT * from produtos where cod_loja=?;
+                                 SELECT * from funcionarios where cod_loja=?;
                                  <sql:param value="${sessionScope['idLoja']}"/>
                              </sql:query>
                             <c:forEach var="row" items="${result.rows}">  
                                 <tr>
                                     <th scope="row"><c:out value="${row.id}"/></th>                           
                                     <td><c:out value="${row.nome}"/></td>
-                                    <td><c:out value="${row.descricao}"/></td>
-                                    <td>R$ <c:out value="${row.preco}"/></td>
-                                    <td><button type="button" onclick="atualizarProduto(<c:out value="${row.id}"/>);" class="btn btn-warning pull-right"><i class="fa fa-pencil"></i></button></td>
-                                    <td><button type="button" onclick="excluirProduto(<c:out value="${row.id}"/>);" class="btn btn-danger pull-right"><i class="fa fa-trash-o"></i></button></td>
+                                    <td><c:out value="${row.cpf}"/></td>
+                                    <td><c:out value="${row.email}"/></td>
+                                    <td><c:out value="${row.telefone}"/></td>
+                                    <td><c:out value="${row.cargo}"/></td>
+                                    <td><button type="button" onclick="atualizarFuncionario(<c:out value="${row.id}"/>);" class="btn btn-warning pull-right"><i class="fa fa-pencil"></i></button></td>
+                                    <td><button type="button" onclick="excluirFuncionario(<c:out value="${row.id}"/>);" class="btn btn-danger pull-right"><i class="fa fa-trash-o"></i></button></td>
                                 </tr>
                             </c:forEach>
                           </tbody>
@@ -119,39 +118,51 @@
                     
                 </div>
 
+
             </div>
 
         </div>
         
-        
     </section>
-
-    <!-- Modal -->
+                             
+ <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">          
-          <form class="form-horizontal" action="actions/cadastrarproduto.jsp">  
+          <form class="form-horizontal" action="actions/cadastrarfuncionario.jsp">  
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">Cadastrar Produto</h4>
+              <h4 class="modal-title" id="myModalLabel">Cadastrar Funcionário</h4>
             </div>
             <div class="modal-body">
                   <div class="form-group">
                     <label  class="col-sm-2 control-label">Nome</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nome" placeholder="Digite o nome do produto">
+                      <input type="text" class="form-control" name="nome" placeholder="Digite o Nome do Funcionário">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label  class="col-sm-2 control-label">Descrição</label>
+                    <label  class="col-sm-2 control-label">CPF</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="descricao" placeholder="Escreva uma descrição para seu produto">
+                      <input type="text" class="form-control" name="cpf" placeholder="Digite o CPF do funcionário">
+                    </div>
+                  </div>
+                <div class="form-group">
+                    <label  class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" name="email" placeholder="Digite o email do Funcionário">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label">Telefone</label>
+                    <div class="col-sm-10">
+                      <input type="number" class="form-control" name="telefone" placeholder="Digite o telefone do Funcionário">
                     </div>
                   </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Preço</label>
+                        <label class="col-sm-2 control-label">Cargo</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="preco" placeholder="Digite o Preço do Produto">
+                          <input type="text" class="form-control" name="cargo" placeholder="Digite o cargo do Funcionário">
                         </div>
                       </div>
             </div>
@@ -162,7 +173,9 @@
           </form>  
         </div>
       </div>
-    </div>
+    </div>                             
+
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

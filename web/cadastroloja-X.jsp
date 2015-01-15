@@ -1,9 +1,3 @@
-<%-- 
-    Document   : cadastrar
-    Created on : 13/01/2015, 01:00:28
-    Author     : fromd_000
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -27,27 +21,27 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="form-signin-heading text-center"> GERENCIADOR DE LOJA <i class="fa fa-shopping-cart"></i> </h2>
+                <h2 class="form-signin-heading text-center"> Info Store <i class="fa fa-shopping-cart"></i> </h2>
                 
-                <h3 class="text-center bg-primary">CADASTRO</h3>
+                <h3 class="text-center bg-primary">Cadastro de produto</h3>
                 
-                <form class="form-horizontal" action="actions/cadastrarloja.jsp">
+                <form class="form-horizontal" action="actions/cad_produtos.jsp">
                     <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-2 control-label">Loja</label>
+                      <label for="inputEmail3" class="col-sm-2 control-label">Tipo</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" name="nome" placeholder="Digite o nome da sua loja">
+                        <input type="text" class="form-control" name="tipo" placeholder="Tipo de produto">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-2 control-label">CNPJ</label>
+                      <label for="inputEmail3" class="col-sm-2 control-label">Marca</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" name="cnpj" placeholder="Digite o cnpj da sua empresa">
+                        <input type="text" class="form-control" name="marca" placeholder="Marca do produto">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label for="inputPassword3" class="col-sm-2 control-label">Email</label>
+                      <label for="inputPassword3" class="col-sm-2 control-label">Descrição</label>
                       <div class="col-sm-10">
-                        <input type="email" class="form-control"  name="email" placeholder="Digite seu email">
+                        <input type="text" class="form-control"  name="descricao" placeholder="Descrição do produto">
                       </div>
                     </div>
                     <div class="form-group">
@@ -73,8 +67,6 @@
             </div>
         </div>  
     </div> 
-
-
     <script src="bootstrap.min.js"></script>
   </body>
 </html>

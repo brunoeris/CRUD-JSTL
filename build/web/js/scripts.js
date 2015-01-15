@@ -1,6 +1,6 @@
 function config(id){
 
-    window.location ='config.jsp?id='+id;
+    window.location ='actions/user_config.jsp?id='+id;
 
 };
 
