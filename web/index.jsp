@@ -29,28 +29,30 @@
                           
                     </div>
                     <div class="col-md-4 text-center">
-                           <h1 class="bg-primary img-circle"><i class="fa fa-shopping-cart fa-4x "></i></h1>
+                           <h1 class="bg-primary img-circle"><i class="fa fa-info-circle fa-5x "></i></h1>
                     </div>
                    <div class="col-md-4 text-center">
                           
                     </div>
                </div>
                 
-                    <h2 class="form-signin-heading text-center text-uppercase">Gerenciador de Loja</h2>
+                    <h1 class="form-signin-heading text-center">Info Store</h1>
                 
                 
                 <form class="form-signin text-center" action="actions/login.jsp" role="form" method="post">                    
-                    <input type="text" name="login" class="form-control" placeholder="Digite seu nome de usuário" required autofocus>
-                    <input type="password" name="password" class="form-control" placeholder="Digite sua senha" required>
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">ENTRAR</button>
-                    <a class="btn btn-lg btn-link " href="cad_users.jsp">CADASTRAR</a>
+                    <input type="text" name="login" class="form-control" placeholder="Usuário" required autofocus>
+                    <input type="password" name="password" class="form-control" placeholder="Senha" required>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+                    <a class="btn btn-lg btn-link " href="cad_users.jsp">Cadastre-se</a>
                 </form>
             </div>
             
         </div>
            
         </div>  
-    </div> 
+    <video autoplay loop poster="img/bg.svg" id="bgvid">
+    <source src="img/videobg.mp4" type="video/mp4">
+    </video>
 
 
     <script src="bootstrap.min.js"></script>

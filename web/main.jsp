@@ -25,11 +25,11 @@
             </c:redirect>  
         </c:if>  
       
-      <div class="bg-primary navbar-fixed-top">
+      <div class="bg-default navbar-top">
           
-          <h4 class="text-center">Info Store <i class="fa fa-globe"></i></h4>
+          <a href="main.jsp" ><h4 class="text-center"><i class="fa fa-info-circle fa-4x"></i></h4><h2 class="text-center logotop">Info Store</h2></a>
           
-      </div>  
+      </div>
     
     <div class="container">
          
@@ -43,12 +43,11 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand text-uppercase" href="main.jsp"><%= session.getAttribute("user_login") %>  </a>
+            <a class="navbar-brand text-uppercase" href="main.jsp">  </a>
             
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li class="text-center"><a class="configlink" onclick="config(${sessionScope['user_id']});"><i class="fa fa-gears"></i></a></li>   
+            <ul class="nav navbar-nav">  
               <li class="text-center"><a href="clientes.jsp">Clientes</a></li>
               <li class="text-center"><a href="produtos.jsp">Produtos</a></li>
               <li class="text-center"><a href="pecas.jsp">Peças</a></li>
@@ -62,8 +61,8 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-          <h2>BEM VINDO ! <i class="fa fa-shopping-cart"></i></br>
-        <small>Slogan.</small></h2>
+          <h2>Bem Vindo !<br>
+        <small><%= session.getAttribute("user_login") %></small></h2>
       </div>
 
     </div> <!-- /container -->
