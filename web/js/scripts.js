@@ -11,13 +11,13 @@ function atualizarProduto(id){
 };
 
  function excluirProduto(id){
-    if ( confirm('Tem certeza que deseja deletar o produto de id : '+id+' ?') ) {
-        window.location = 'actions/deletarproduto.jsp?id='+id;
+    if ( confirm('Deseja excluir o produto de id : '+id+' ?') ) {
+        window.location = 'actions/prod_delete.jsp?id='+id;
     }
 };
 
 
-function atualizarFuncionario(id){
+/*function atualizarFuncionario(id){
                 
     window.location ='editarfuncionario.jsp?id='+id;
 
@@ -28,7 +28,7 @@ function atualizarFuncionario(id){
         window.location = 'actions/deletarfuncionario.jsp?id='+id;
     }
 };
-
+*/
 
  function atualizarCliente(id){
                 

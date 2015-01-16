@@ -66,7 +66,7 @@
           <div class="row">
               <blockquote class="col-md-12"> 
                   <h2>Info Store<br><small>Configurações de usuário.</small></h2>
-                  <a type="button" class="btn btn-default btn-lg" href="main.jsp">VOLTAR</a>
+                  <a type="button" class="btn btn-default btn-lg" href="../main.jsp">VOLTAR</a>
               </blockquote>
           </div>
         

@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>DASHBOARD - LOJA</title>
+    <title>Info Store</title>
 
   <link rel="stylesheet" href="css/reset.css"/>
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -21,13 +21,13 @@
   </head>
 
   <body>
-      <c:if test="${ empty sessionScope.loginUser}" >  
+      <c:if test="${ empty sessionScope.user_login}" >  
         <c:redirect url="index.jsp" >
             </c:redirect>  
         </c:if>  
       <div class="bg-primary navbar-fixed-top">
           
-          <h4 class="text-center">Gerenciador de Loja <i class="fa fa-globe"></i></h4>
+          <h4 class="text-center">Info Store <i class="fa fa-globe"></i></h4>
           
       </div>  
     
@@ -43,15 +43,15 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand text-uppercase" href="main.jsp"><%= session.getAttribute("loginUser") %>  </a>
+            <a class="navbar-brand text-uppercase" href="main.jsp"><%= session.getAttribute("user_login") %>  </a>
             
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li class="text-center"><a class="configlink" onclick="config(${sessionScope['user_id']});"><i class="fa fa-gears"></i></a></li>   
-              <li class="text-center"><a href="produtos.jsp">Produtos</a></li>
-              <li class="text-center"><a href="funcionarios.jsp">Funcionários</a></li>
-              <li class="text-center"><a href="clientes.jsp">Clientes</a></li>
+            <ul class="nav navbar-nav">  
+              <li class="text-center"><a href="clientes.jsp">Clientes [PROD]</a></li>
+              <li class="text-center"><a href="produtos.jsp">Produtos [FUN]</a></li>
+              <li class="text-center"><a href="pecas.jsp">Peças [CLI]</a></li>
+            </ul>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li class="active text-center"><a href="actions/logout.jsp">SAIR<span class="sr-only">(current)</span></a></li>
@@ -64,8 +64,8 @@
       <div class="container">
           <div class="row">
               <blockquote class="col-md-12"> 
-                  <h2>Funcionários<br><small>Gerencie os funcionários da sua loja.</small></h2>
-                  <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Cadastrar Funcionário</button>
+                  <h2>Produtos<br><small>FRASE MARCANTE QUE IDENTIFICA OS PRODUTOS DE MANEIRA CARISMÁTICA</small></h2>
+                  <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Cadastrar Produto</button>
               </blockquote>
           </div>
         
@@ -83,33 +83,30 @@
                         <table class="table">
                           <thead>
                             <tr>
-                              <th>#</th>
-                              <th>Nome</th>
-                              <th>CPF</th>
-                              <th>Email</th>
-                              <th>Telefone</th>
-                              <th>Cargo</th>
+                              <th>ID</th>
+                              <th>Tipo</th>
+                              <th>Marca</th>
+                              <th>Descrição</th>
+                              <th>Referência</th>
                             </tr>
                           </thead>
                           <tbody>
                              <sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver"
-                                                url="jdbc:mysql://localhost/projetojstl"
+                                                url="jdbc:mysql://localhost/infostore"
                                                 user="root"  password=""/>
 
                              <sql:query dataSource="${dbsource}" var="result">
-                                 SELECT * from funcionarios where cod_loja=?;
-                                 <sql:param value="${sessionScope['idLoja']}"/>
+                                 SELECT * from produtos;
                              </sql:query>
                             <c:forEach var="row" items="${result.rows}">  
                                 <tr>
-                                    <th scope="row"><c:out value="${row.id}"/></th>                           
-                                    <td><c:out value="${row.nome}"/></td>
-                                    <td><c:out value="${row.cpf}"/></td>
-                                    <td><c:out value="${row.email}"/></td>
-                                    <td><c:out value="${row.telefone}"/></td>
-                                    <td><c:out value="${row.cargo}"/></td>
-                                    <td><button type="button" onclick="atualizarFuncionario(<c:out value="${row.id}"/>);" class="btn btn-warning pull-right"><i class="fa fa-pencil"></i></button></td>
-                                    <td><button type="button" onclick="excluirFuncionario(<c:out value="${row.id}"/>);" class="btn btn-danger pull-right"><i class="fa fa-trash-o"></i></button></td>
+                                    <th scope="row"><c:out value="${row.pro_id}"/></th>                           
+                                    <td><c:out value="${row.pro_type}"/></td>
+                                    <td><c:out value="${row.pro_mark}"/></td>
+                                    <td><c:out value="${row.pro_details}"/></td>
+                                    <td><c:out value="${row.pro_reference}"/></td>
+                                    <td><button type="button" onclick="atualizarProduto(<c:out value="${row.pro_id}"/>);" class="btn btn-warning pull-right"><i class="fa fa-pencil"></i></button></td>
+                                    <td><button type="button" onclick="excluirProduto(<c:out value="${row.pro_id}"/>);" class="btn btn-danger pull-right"><i class="fa fa-trash-o"></i></button></td>
                                 </tr>
                             </c:forEach>
                           </tbody>
@@ -129,42 +126,36 @@
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">          
-          <form class="form-horizontal" action="actions/cadastrarfuncionario.jsp">  
+          <form class="form-horizontal" action="actions/prod_insert.jsp">  
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">Cadastrar Funcionário</h4>
+              <h4 class="modal-title" id="myModalLabel">Cadastrar Produto</h4>
             </div>
             <div class="modal-body">
                   <div class="form-group">
-                    <label  class="col-sm-2 control-label">Nome</label>
+                    <label  class="col-sm-2 control-label">Tipo</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nome" placeholder="Digite o Nome do Funcionário">
+                      <input type="text" class="form-control" name="type" placeholder="Placa mãe, memória, disco rigido">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label  class="col-sm-2 control-label">CPF</label>
+                    <label  class="col-sm-2 control-label">Marca</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="cpf" placeholder="Digite o CPF do funcionário">
+                      <input type="text" class="form-control" name="mark" placeholder="Corsair, Intel, AMD, HP">
                     </div>
                   </div>
                 <div class="form-group">
-                    <label  class="col-sm-2 control-label">Email</label>
+                    <label  class="col-sm-2 control-label">Descrição</label>
                     <div class="col-sm-10">
-                      <input type="email" class="form-control" name="email" placeholder="Digite o email do Funcionário">
+                      <input type="text" class="form-control" name="details" placeholder="Descreva o produto">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label  class="col-sm-2 control-label">Telefone</label>
+                    <label  class="col-sm-2 control-label">Referência</label>
                     <div class="col-sm-10">
-                      <input type="number" class="form-control" name="telefone" placeholder="Digite o telefone do Funcionário">
+                      <input type="text" class="form-control" name="reference">
                     </div>
                   </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Cargo</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" name="cargo" placeholder="Digite o cargo do Funcionário">
-                        </div>
-                      </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>

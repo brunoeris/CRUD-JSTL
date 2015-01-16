@@ -48,9 +48,9 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">  
-              <li class="text-center"><a href="clientes.jsp">Clientes</a></li>
-              <li class="text-center"><a href="produtos.jsp">Produtos</a></li>
-              <li class="text-center"><a href="pecas.jsp">Peças</a></li>
+              <li class="text-center"><a href="clientes.jsp">Clientes [PROD]</a></li>
+              <li class="text-center"><a href="produtos.jsp">Produtos [FUN]</a></li>
+              <li class="text-center"><a href="pecas.jsp">Peças [CLI]</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li class="active text-center"><a href="actions/logout.jsp">SAIR<span class="sr-only">(current)</span></a></li>
@@ -60,10 +60,12 @@
       </nav>
 
       <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-          <h2>Bem Vindo !<br>
-        <small><%= session.getAttribute("user_login") %></small></h2>
-      </div>
+        <div class="jumbotron">
+            <h2>Bem Vindo !<br>
+            <small><%= session.getAttribute("user_login") %></small><br>
+            <small><a class="configlink" onclick="config(${sessionScope['user_id']});">Configurações da conta</a></small>
+            </h2>
+        </div>
 
     </div> <!-- /container -->
     
@@ -72,7 +74,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h3>Clientes [PROD]<a href="clientes.jsp" class="btn btn-default pull-right">Ver Mais</a></h3>
+                    <h3>Clientes<a href="clientes.jsp" class="btn btn-default pull-right">Ver Mais</a></h3>
                     </br>
                     
                     
@@ -95,7 +97,7 @@
                     </table>
                 </div>
                 <div class="col-md-4">
-                    <h3>Produtos [FUN]<a href="produtos.jsp" class="btn btn-default pull-right">Ver Mais</a></h3>
+                    <h3>Produtos<a href="produtos.jsp" class="btn btn-default pull-right">Ver Mais</a></h3>
                     </br>
                     <table class="table table-hover">
                         <tbody>
@@ -113,7 +115,7 @@
                     
                 </div>
                 <div class="col-md-4">
-                    <h3>Peças [CLI]<a href="pecas.jsp" class="btn btn-default pull-right">Ver Mais</a></h3>
+                    <h3>Peças<a href="pecas.jsp" class="btn btn-default pull-right">Ver Mais</a></h3>
                     </br>
                     <table class="table table-hover">
                         <tbody>
