@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,15 +26,12 @@
             <c:param name="errMsg" value="Sessao não iniciada." />
             </c:redirect>  
         </c:if>  
-      <div class="bg-default navbar-top">
-          
-          <a href="main.jsp" ><h4 class="text-center"><i class="fa fa-info-circle fa-4x"></i></h4><h2 class="text-center logotop">Info Store</h2></a>
-          
-      </div> 
+       
+    <div class="bg-default navbar-top">
+        <h4 class="text-center"><i class="fa fa-info-circle fa-4x"></i></h4><h2 class="text-center logotop"><a href="main.jsp" >Info Store</a></h2>   
+    </div>
     
     <div class="container">
-         
-      <!-- Static navbar -->
       <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -56,22 +53,21 @@
             <ul class="nav navbar-nav navbar-right">
               <li class="active text-center"><a href="actions/logout.jsp">SAIR<span class="sr-only">(current)</span></a></li>
             </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
+          </div>
+        </div>
       </nav>
       
 
       <div class="container">
           <div class="row">
-              <blockquote class="col-md-12"> 
-                  <h2>Clientes<br><small>Gerenciamento de clientes.</small></h2>
+              <blockquote class="col-md-12 text-center"> 
+                  <h2 class="text-center">Gerenciamento de clientes</h2><br>
                   <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Cadastrar Cliente</button>
               </blockquote>
           </div>
         
       </div>
-
-    </div> <!-- /container -->
+    </div><br><br>
     
     
     <section>
@@ -79,7 +75,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table table-striped table-bordered">
                           <thead>
                             <tr>
                               <th>ID</th>
@@ -157,13 +153,12 @@
         </div>
       </div>
     </div>
-    <!-- Bootstrap core JavaScript
+    
+    <!-- JS ##################################
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>

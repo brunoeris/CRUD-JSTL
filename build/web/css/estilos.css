@@ -21,7 +21,7 @@ body {
 
 .configlink{
     cursor: pointer;
-    
+    font-size: 12px;
 }
 
 .form-signin-heading{

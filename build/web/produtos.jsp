@@ -4,15 +4,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Info Store</title>
-
-  <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/reset.css"/>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css"/>
     <link rel="stylesheet" href="css/fontawesome/css/font-awesome.min.css"/>
@@ -25,15 +23,12 @@
         <c:redirect url="index.jsp" >
             </c:redirect>  
         </c:if>  
-      <div class="bg-primary navbar-fixed-top">
-          
-          <h4 class="text-center">Info Store <i class="fa fa-globe"></i></h4>
-          
-      </div>  
+      
+    <div class="bg-default navbar-top">
+        <h4 class="text-center"><i class="fa fa-info-circle fa-4x"></i></h4><h2 class="text-center logotop"><a href="main.jsp" >Info Store</a></h2>   
+    </div>
     
     <div class="container">
-         
-      <!-- Static navbar -->
       <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -43,7 +38,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand text-uppercase" href="main.jsp"><%= session.getAttribute("user_login") %>  </a>
+            <a class="navbar-brand text-uppercase" href="main.jsp">  </a>
             
           </div>
           <div id="navbar" class="navbar-collapse collapse">
@@ -52,35 +47,29 @@
               <li class="text-center"><a href="produtos.jsp">Produtos</a></li>
               <li class="text-center"><a href="pecas.jsp">Peças</a></li>
             </ul>
-            </ul>
             <ul class="nav navbar-nav navbar-right">
               <li class="active text-center"><a href="actions/logout.jsp">SAIR<span class="sr-only">(current)</span></a></li>
             </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
+          </div>
+        </div>
       </nav>
 
-      <!-- Main component for a primary marketing message or call to action -->
       <div class="container">
           <div class="row">
-              <blockquote class="col-md-12"> 
-                  <h2>Produtos<br><small>FRASE MARCANTE QUE IDENTIFICA OS PRODUTOS DE MANEIRA CARISMÁTICA</small></h2>
+              <blockquote class="col-md-12 text-center">  
+                  <h2 class="text-center">Produtos<br><h4>FRASE MARCANTE QUE IDENTIFICA OS PRODUTOS DE MANEIRA CARISMÁTICA</h4></h2><br>
                   <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Cadastrar Produto</button>
               </blockquote>
           </div>
-        
       </div>
-
-    </div> <!-- /container -->
-    
+    </div><br><br>
     
     <section>
         <div class="container">
             <div class="row">
-
                 <div class="col-md-12">
                      <div class="table-responsive">
-                        <table class="table">
+                        <table class="table table-striped table-bordered">
                           <thead>
                             <tr>
                               <th>ID</th>
@@ -111,13 +100,9 @@
                             </c:forEach>
                           </tbody>
                         </table>
-                    </div>
-                    
+                    </div>      
                 </div>
-
-
             </div>
-
         </div>
         
     </section>
@@ -167,13 +152,11 @@
     </div>                             
 
 
-    <!-- Bootstrap core JavaScript
+    <!-- JS ##################################
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>

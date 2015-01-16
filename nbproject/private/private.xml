@@ -3,12 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Upstream, based on origin/master
             <file>file:/C:/Users/Hercilio/Desktop/CRUD-JSTL/web/produtos.jsp</file>
             <file>file:/C:/Users/Hercilio/Desktop/CRUD-JSTL/web/clientes.jsp</file>
             <file>file:/C:/Users/Hercilio/Desktop/CRUD-JSTL/web/editarcliente.jsp</file>
             <file>file:/C:/Users/Hercilio/Desktop/CRUD-JSTL/web/pecas.jsp</file>
             <file>file:/C:/Users/Hercilio/Desktop/CRUD-JSTL/web/editarpeca.jsp</file>
             <file>file:/C:/Users/Hercilio/Desktop/CRUD-JSTL/web/editarproduto.jsp</file>
+=======
+            <file>file:/C:/Users/admbruno/Documents/NetBeansProjects/CRUD-JSTL/web/actions/user_config.jsp</file>
+            <file>file:/C:/Users/admbruno/Documents/NetBeansProjects/CRUD-JSTL/web/index.jsp</file>
+            <file>file:/C:/Users/admbruno/Documents/NetBeansProjects/CRUD-JSTL/web/produtos.jsp</file>
+            <file>file:/C:/Users/admbruno/Documents/NetBeansProjects/CRUD-JSTL/web/main.jsp</file>
+            <file>file:/C:/Users/admbruno/Documents/NetBeansProjects/CRUD-JSTL/web/clientes.jsp</file>
+>>>>>>> 688ed04 New interface
         </group>
     </open-files>
 </project-private>
