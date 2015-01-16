@@ -19,11 +19,11 @@
   </head>
 
   <body>
-      <c:if test="${ empty sessionScope.user_login}" >  
-        <c:redirect url="index.jsp" >
-            <c:param name="errMsg" value="Sessao não iniciada." />
-            </c:redirect>  
-        </c:if>  
+    <c:if test="${ empty sessionScope.user_login}" >  
+      <c:redirect url="index.jsp" >
+        <c:param name="errMsg" value="Sessao não iniciada." />
+      </c:redirect>  
+    </c:if>  
       
     <div class="bg-default navbar-top">
         <h4 class="text-center"><i class="fa fa-info-circle fa-4x"></i></h4><h2 class="text-center logotop"><a href="main.jsp" >Info Store</a></h2>   
@@ -66,13 +66,13 @@
       </div>
     </div><br><br>
     
-     <sql:setDataSource var="ds" driver="com.mysql.jdbc.Driver"
-                       url="jdbc:mysql://localhost/infostore"
-                       user="root" password=""/>
+    <sql:setDataSource var="ds" driver="com.mysql.jdbc.Driver"
+                        url="jdbc:mysql://localhost/infostore"
+                        user="root" password=""/>
     <sql:query dataSource="${ds}" var="result">
-            SELECT * from clientes where cli_id=?;
-            <sql:param value="${param.id}" />
-        </sql:query>
+      SELECT * from clientes where cli_id=?;
+      <sql:param value="${param.id}" />
+    </sql:query>
     <section>
         <div class="container">
             <c:forEach var="row" items="${result.rows}">
