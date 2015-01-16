@@ -4,15 +4,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Info Store</title>
-
- <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/reset.css"/>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css"/>
     <link rel="stylesheet" href="css/fontawesome/css/font-awesome.min.css"/>
@@ -25,15 +23,12 @@
         <c:redirect url="index.jsp" >
             </c:redirect>  
         </c:if>  
-           <div class="bg-primary navbar-fixed-top">
-          
-          <h4 class="text-center">Info Store<i class="fa fa-globe"></i></h4>
-          
-      </div>  
+      
+    <div class="bg-default navbar-top">
+        <h4 class="text-center"><i class="fa fa-info-circle fa-4x"></i></h4><h2 class="text-center logotop"><a href="main.jsp" >Info Store</a></h2>   
+    </div>
     
     <div class="container">
-         
-      <!-- Static navbar -->
       <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -43,34 +38,32 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand text-uppercase" href="main.jsp"><%= session.getAttribute("user_login") %>  </a>
+            <a class="navbar-brand text-uppercase" href="main.jsp">  </a>
             
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">  
-              <li class="text-center"><a href="clientes.jsp">Clientes [PROD]</a></li>
-              <li class="text-center"><a href="produtos.jsp">Produtos [FUN]</a></li>
-              <li class="text-center"><a href="pecas.jsp">Peças [CLI]</a></li>
+              <li class="text-center"><a href="clientes.jsp">Clientes</a></li>
+              <li class="text-center"><a href="produtos.jsp">Produtos</a></li>
+              <li class="text-center"><a href="pecas.jsp">Peças</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li class="active text-center"><a href="actions/logout.jsp">SAIR<span class="sr-only">(current)</span></a></li>
             </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
+          </div>
+        </div>
       </nav>
       
 
       <div class="container">
           <div class="row">
-              <blockquote class="col-md-12"> 
-                  <h2>Produtos<br><small>Editar produto.</small></h2>
+              <blockquote class="col-md-12 text-center"> 
+                  <h2 class="text-center">Produtos<br><h4>Editar produto.</h4></h2><br>
                   <a type="button" class="btn btn-default btn-lg" href="produtos.jsp">VOLTAR</a>
               </blockquote>
           </div>
-        
       </div>
-
-    </div> <!-- /container -->
+    </div><br><br>
     
      <sql:setDataSource var="ds" driver="com.mysql.jdbc.Driver"
                        url="jdbc:mysql://localhost/infostore"
