@@ -17,18 +17,18 @@ function atualizarProduto(id){
 };
 
 
-/*function atualizarFuncionario(id){
+function atualizarPeca(id){
                 
-    window.location ='editarfuncionario.jsp?id='+id;
+    window.location ='editarpeca.jsp?id='+id;
 
 };
 
- function excluirFuncionario(id){
-    if ( confirm('Tem certeza que deseja deletar o produto de id : '+id+' ?') ) {
-        window.location = 'actions/deletarfuncionario.jsp?id='+id;
+ function excluirPeca(id){
+    if ( confirm('Deseja excluir a peça de id : '+id+' ?') ) {
+        window.location = 'actions/peca_delete.jsp?id='+id;
     }
 };
-*/
+
 
  function atualizarCliente(id){
                 

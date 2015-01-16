@@ -1,9 +1,3 @@
-<%-- 
-    Document   : editarfuncionario
-    Created on : 13/01/2015, 13:44:36
-    Author     : fromd_000
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="java.io.*,java.util.*,java.sql.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -16,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>DASHBOARD - LOJA</title>
+    <title>Info Store</title>
 
  <link rel="stylesheet" href="css/reset.css"/>
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -27,13 +21,13 @@
   </head>
 
   <body>
-      <c:if test="${ empty sessionScope.loginUser}" >  
+      <c:if test="${ empty sessionScope.user_login}" >  
         <c:redirect url="index.jsp" >
             </c:redirect>  
         </c:if>  
           <div class="bg-primary navbar-fixed-top">
           
-          <h4 class="text-center">Gerenciador de Loja <i class="fa fa-globe"></i></h4>
+          <h4 class="text-center">Info Store <i class="fa fa-globe"></i></h4>
           
       </div>  
     
@@ -49,15 +43,12 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand text-uppercase" href="main.jsp"><%= session.getAttribute("loginUser") %>  </a>
-            
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li class="text-center"><a class="configlink" onclick="config(${sessionScope['idLoja']});"><i class="fa fa-gears"></i></a></li>   
-              <li class="text-center"><a href="produtos.jsp">Produtos</a></li>
-              <li class="active text-center"><a href="funcionarios.jsp">Funcionários</a></li>
+            <ul class="nav navbar-nav">  
               <li class="text-center"><a href="clientes.jsp">Clientes</a></li>
+              <li class="text-center"><a href="produtos.jsp">Produtos</a></li>
+              <li class="text-center"><a href="pecas.jsp">Peças</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li class="active text-center"><a href="actions/logout.jsp">SAIR<span class="sr-only">(current)</span></a></li>
@@ -70,8 +61,8 @@
       <div class="container">
           <div class="row">
               <blockquote class="col-md-12"> 
-                  <h2>Funcionários<br><small>Gerencie os Funcionários da sua loja.</small></h2>
-                  <a type="button" class="btn btn-default btn-lg" href="funcionarios.jsp">VOLTAR</a>
+                  <h2>Peças<br><small>Atualizar dados de peças.</small></h2>
+                  <a type="button" class="btn btn-default btn-lg" href="pecas.jsp">VOLTAR</a>
               </blockquote>
           </div>
         
@@ -80,47 +71,40 @@
     </div> <!-- /container -->
     
      <sql:setDataSource var="ds" driver="com.mysql.jdbc.Driver"
-                       url="jdbc:mysql://localhost/projetojstl"
+                       url="jdbc:mysql://localhost/infostore"
                        user="root" password=""/>
     <sql:query dataSource="${ds}" var="result">
-            SELECT * from funcionarios where id=?;
-            <sql:param value="${param.id}" />
-        </sql:query>
+            SELECT * from pecas;
+    </sql:query>
     <section>
         <div class="container">
             <c:forEach var="row" items="${result.rows}">
             <div class="row">
-                 <form class="form-horizontal" action="actions/atualizarfuncionario.jsp" method="post">  
+                 <form class="form-horizontal" action="actions/peca_edit.jsp" method="post">  
                 <div class="col-md-8 center-block">
                   <div class="form-group">
-                    <label  class="col-sm-2 control-label">Nome</label>
+                    <label  class="col-sm-2 control-label">Tipo</label>
                     <div class="col-sm-10">
                         <input type="hidden" value="${param.id}" name="id"/>
-                      <input type="text" class="form-control" name="nome" placeholder="Digite o nome do Funcionário" value="${row.nome}">
+                      <input type="text" class="form-control" name="type" value="${row.pec_type}">
                     </div>
                   </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">CPF</label>
+                        <label class="col-sm-2 control-label">Marca</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="cpf" placeholder="Digite o CPF do Funcionário" value="${row.cpf}">
+                          <input type="text" class="form-control" name="mark" value="${row.pec_mark}">
                         </div>
                       </div>
                   <div class="form-group">
-                    <label  class="col-sm-2 control-label">Email</label>
+                    <label  class="col-sm-2 control-label">Descrição</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="email" placeholder="Digite o Email do Funcionário" value="${row.email}">
+                      <input type="text" class="form-control" name="details" value="${row.pec_details}">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label  class="col-sm-2 control-label">Telefone</label>
+                    <label  class="col-sm-2 control-label">Referência</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="telefone" placeholder="Digite o Telefone do Funcionário" value="${row.telefone}">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label  class="col-sm-2 control-label">Cargo</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="cargo" placeholder="Digite o Cargo do Funcionário" value="${row.cargo}">
+                      <input type="text" class="form-control" name="reference" value="${row.pec_reference}">
                     </div>
                   </div>
                      <div class="form-group">
@@ -136,27 +120,6 @@
         
         
     </section>
-
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">          
-          <form class="form-horizontal" action="actions/cadastrarproduto.jsp">  
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">Cadastrar Produto</h4>
-            </div>
-            <div class="modal-body">
-
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-              <button type="submit" class="btn btn-primary">Cadastrar</button>
-            </div>
-          </form>  
-        </div>
-      </div>
-    </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

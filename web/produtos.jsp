@@ -48,9 +48,9 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">  
-              <li class="text-center"><a href="clientes.jsp">Clientes [PROD]</a></li>
-              <li class="text-center"><a href="produtos.jsp">Produtos [FUN]</a></li>
-              <li class="text-center"><a href="pecas.jsp">Peças [CLI]</a></li>
+              <li class="text-center"><a href="clientes.jsp">Clientes</a></li>
+              <li class="text-center"><a href="produtos.jsp">Produtos</a></li>
+              <li class="text-center"><a href="pecas.jsp">Peças</a></li>
             </ul>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -135,13 +135,13 @@
                   <div class="form-group">
                     <label  class="col-sm-2 control-label">Tipo</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="type" placeholder="Placa mãe, memória, disco rigido">
+                      <input type="text" class="form-control" name="type" placeholder="Notebook, Gabinete, Nobreak, Monitor">
                     </div>
                   </div>
                   <div class="form-group">
                     <label  class="col-sm-2 control-label">Marca</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="mark" placeholder="Corsair, Intel, AMD, HP">
+                      <input type="text" class="form-control" name="mark" placeholder="Intel, AMD, HP, Positivo, LG, Samsung">
                     </div>
                   </div>
                 <div class="form-group">

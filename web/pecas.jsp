@@ -1,9 +1,3 @@
-<%-- 
-    Document   : clientes
-    Created on : 13/01/2015, 00:32:36
-    Author     : fromd_000
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="java.io.*,java.util.*,java.sql.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -16,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>DASHBOARD - LOJA</title>
+    <title>Info Store</title>
 
     <link rel="stylesheet" href="css/reset.css"/>
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +21,7 @@
   </head>
 
   <body>
-      <c:if test="${ empty sessionScope.loginUser}" >  
+      <c:if test="${ empty sessionScope.user_login}" >  
         <c:redirect url="index.jsp" >
             </c:redirect>  
         </c:if>  
@@ -49,15 +43,13 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand text-uppercase" href="main.jsp"><%= session.getAttribute("loginUser") %>  </a>
             
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li class="text-center"><a class="configlink" onclick="config(${sessionScope['idLoja']});"><i class="fa fa-gears"></i></a></li>   
+            <ul class="nav navbar-nav">  
+              <li class="text-center"><a href="clientes.jsp">Clientes</a></li>
               <li class="text-center"><a href="produtos.jsp">Produtos</a></li>
-              <li class="text-center"><a href="funcionarios.jsp">Funcionários</a></li>
-              <li class="active text-center"><a href="clientes.jsp">Clientes</a></li>
+              <li class="text-center"><a href="pecas.jsp">Peças</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li class="active text-center"><a href="actions/logout.jsp">SAIR<span class="sr-only">(current)</span></a></li>
@@ -70,8 +62,8 @@
       <div class="container">
           <div class="row">
               <blockquote class="col-md-12"> 
-                  <h2>Clientes<br><small>Gerencie os clientes da sua loja.</small></h2>
-                  <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Cadastrar Cliente</button>
+                  <h2>Peças<br><small>Lista de peças disponíveis.</small></h2>
+                  <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Cadastrar Peça</button>
               </blockquote>
           </div>
         
@@ -98,22 +90,21 @@
                           </thead>
                           <tbody>
                              <sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver"
-                                                url="jdbc:mysql://localhost/projetojstl"
+                                                url="jdbc:mysql://localhost/infostore"
                                                 user="root"  password=""/>
 
                              <sql:query dataSource="${dbsource}" var="result">
-                                 SELECT * from clientes where cod_loja=?;
-                                 <sql:param value="${sessionScope['idLoja']}"/>
+                                 SELECT * from pecas;
                              </sql:query>
                             <c:forEach var="row" items="${result.rows}">  
                                 <tr>
-                                    <th scope="row"><c:out value="${row.id}"/></th>                           
-                                    <td><c:out value="${row.nome}"/></td>
-                                    <td><c:out value="${row.email}"/></td>
-                                    <td><c:out value="${row.telefone}"/></td>
-                                    <td><c:out value="${row.endereco}"/></td>
-                                    <td><button type="button" onclick="atualizarProduto(<c:out value="${row.id}"/>);" class="btn btn-warning pull-right"><i class="fa fa-pencil"></i></button></td>
-                                    <td><button type="button" onclick="excluirFuncionario(<c:out value="${row.id}"/>);" class="btn btn-danger pull-right"><i class="fa fa-trash-o"></i></button></td>
+                                    <th scope="row"><c:out value="${row.pec_id}"/></th>                           
+                                    <td><c:out value="${row.pec_type}"/></td>
+                                    <td><c:out value="${row.pec_mark}"/></td>
+                                    <td><c:out value="${row.pec_details}"/></td>
+                                    <td><c:out value="${row.pec_reference}"/></td>
+                                    <td><button type="button" onclick="atualizarPeca(<c:out value="${row.pec_id}"/>);" class="btn btn-warning pull-right"><i class="fa fa-pencil"></i></button></td>
+                                    <td><button type="button" onclick="excluirPeca(<c:out value="${row.pec_id}"/>);" class="btn btn-danger pull-right"><i class="fa fa-trash-o"></i></button></td>
                                 </tr>
                             </c:forEach>
                           </tbody>
@@ -133,43 +124,42 @@
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">          
-          <form class="form-horizontal" action="actions/cadastrarcliente.jsp" method="post">  
+          <form class="form-horizontal" action="actions/peca_insert.jsp" method="post">  
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">Cadastrar Funcionário</h4>
+              <h4 class="modal-title" id="myModalLabel">Cadastrar Peça</h4>
             </div>
             <div class="modal-body">
                   <div class="form-group">
-                    <label  class="col-sm-2 control-label">Nome</label>
+                    <label  class="col-sm-2 control-label">Tipo</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nome" placeholder="Digite o Nome do Cliente">
-                    </div>
-                  </div>
-                  
-                <div class="form-group">
-                    <label  class="col-sm-2 control-label">Email</label>
-                    <div class="col-sm-10">
-                      <input type="email" class="form-control" name="email" placeholder="Digite o email do Cliente">
+                      <input type="text" class="form-control" name="type" placeholder="Placa mãe, memória, disco rigido">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label  class="col-sm-2 control-label">Telefone</label>
+                    <label  class="col-sm-2 control-label">Marca</label>
                     <div class="col-sm-10">
-                      <input type="number" class="form-control" name="telefone" placeholder="Digite o telefone do Cliente">
+                      <input type="text" class="form-control" name="mark" placeholder="Corsair, Intel, AMD, Kingston">
                     </div>
                   </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Endereço</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" name="endereco" placeholder="Digite o endereço do Cliente">
-                        </div>
-                      </div>
+                <div class="form-group">
+                    <label  class="col-sm-2 control-label">Descrição</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="details" placeholder="Descreva a peça">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label">Referência</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="reference">
+                    </div>
+                  </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
               <button type="submit" class="btn btn-primary">Cadastrar</button>
             </div>
-          </form>  
+          </form>   
         </div>
       </div>
     </div>                             
