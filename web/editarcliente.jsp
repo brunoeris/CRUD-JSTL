@@ -85,7 +85,7 @@
         <div class="container">
             <c:forEach var="row" items="${result.rows}">
             <div class="row">
-                 <form class="form-horizontal" action="actions/atualizarcliente.jsp" method="post">  
+                 <form class="form-horizontal" action="actions/cli_edit.jsp" method="post">  
                 <div class="col-md-8 center-block">
                    <div class="form-group">
                     <label  class="col-sm-2 control-label">Nome</label>

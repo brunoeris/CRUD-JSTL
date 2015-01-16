@@ -37,7 +37,7 @@ function atualizarProduto(id){
 };
 
  function excluirCliente(id){
-    if ( confirm('Tem certeza que deseja deletar o produto de id : '+id+' ?') ) {
-        window.location = 'actions/deletarcliente.jsp?id='+id;
+    if ( confirm('Tem certeza que deseja deletar o cliente de id : '+id+' ?') ) {
+        window.location = 'actions/cli_delete.jsp?id='+id;
     }
 };
