@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <title>Cadastro de usuários</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cadastro de usuários</title>
     <link rel="stylesheet" href="css/reset.css"/>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css"/>

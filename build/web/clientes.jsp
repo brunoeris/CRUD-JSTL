@@ -6,10 +6,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <title>Administração - Info Store</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Administração - Info Store</title>
     <link rel="stylesheet" href="css/reset.css"/>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css"/>
@@ -55,7 +55,6 @@
         </div>
       </nav>
       
-
       <div class="container">
           <div class="row">
               <blockquote class="col-md-12 text-center"> 
@@ -63,10 +62,8 @@
                   <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Cadastrar Cliente</button>
               </blockquote>
           </div>
-        
       </div>
     </div><br><br>
-    
     
     <section>
         <div class="container">
@@ -97,23 +94,18 @@
                                     <td><c:out value="${row.cli_name}"/></td>
                                     <td><c:out value="${row.cli_mail}"/></td>
                                     <td><c:out value="${row.cli_phone}"/></td>
-                                    <td><button type="button" onclick="atualizarCliente(<c:out value="${row.cli_id}"/>);" class="btn btn-warning pull-right"><i class="fa fa-pencil"></i></button></td>
-                                    <td><button type="button" onclick="excluirCliente(<c:out value="${row.cli_id}"/>);" class="btn btn-danger pull-right"><i class="fa fa-trash-o"></i></button></td>
+                                    <td><button type="button" onclick="atualizarCliente(<c:out value="${row.cli_id}"/>);" class="btn btn-default pull-right"><i class="fa fa-pencil"></i></button></td>
+                                    <td><button type="button" onclick="excluirCliente(<c:out value="${row.cli_id}"/>);" class="btn btn-default pull-right"><i class="fa fa-trash-o"></i></button></td>
                                 </tr>
                             </c:forEach>
                           </tbody>
                         </table>
                     </div>
-                    
                 </div>
-
             </div>
-
         </div>
-        
-        
     </section>
-
+                             
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -152,8 +144,7 @@
       </div>
     </div>
     
-    <!-- JS ##################################
-    ================================================== -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>

@@ -6,10 +6,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <title>Administração - Info Store</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Info Store</title>
     <link rel="stylesheet" href="css/reset.css"/>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css"/>
@@ -39,7 +39,6 @@
               <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand text-uppercase" href="main.jsp">  </a>
-            
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">  
@@ -94,8 +93,8 @@
                                     <td><c:out value="${row.pro_mark}"/></td>
                                     <td><c:out value="${row.pro_details}"/></td>
                                     <td><c:out value="${row.pro_reference}"/></td>
-                                    <td><button type="button" onclick="atualizarProduto(<c:out value="${row.pro_id}"/>);" class="btn btn-warning pull-right"><i class="fa fa-pencil"></i></button></td>
-                                    <td><button type="button" onclick="excluirProduto(<c:out value="${row.pro_id}"/>);" class="btn btn-danger pull-right"><i class="fa fa-trash-o"></i></button></td>
+                                    <td><button type="button" onclick="atualizarProduto(<c:out value="${row.pro_id}"/>);" class="btn btn-default pull-right"><i class="fa fa-pencil"></i></button></td>
+                                    <td><button type="button" onclick="excluirProduto(<c:out value="${row.pro_id}"/>);" class="btn btn-default pull-right"><i class="fa fa-trash-o"></i></button></td>
                                 </tr>
                             </c:forEach>
                           </tbody>
@@ -103,8 +102,7 @@
                     </div>      
                 </div>
             </div>
-        </div>
-        
+        </div>  
     </section>
                              
  <!-- Modal -->
@@ -152,8 +150,6 @@
     </div>                             
 
 
-    <!-- JS ##################################
-    ================================================== -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>

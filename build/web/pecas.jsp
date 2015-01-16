@@ -4,12 +4,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
+    <title>Administração - Info Store</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Info Store</title>
     <link rel="stylesheet" href="css/reset.css"/>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css"/>
@@ -74,10 +74,10 @@
                           <thead>
                             <tr>
                               <th>#</th>
-                              <th>Nome</th>
-                              <th>Email</th>
-                              <th>Telefone</th>
-                              <th>Endereço</th>
+                              <th>Tipo</th>
+                              <th>Marca</th>
+                              <th>Descrição</th>
+                              <th>Referência</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -95,8 +95,8 @@
                                     <td><c:out value="${row.pec_mark}"/></td>
                                     <td><c:out value="${row.pec_details}"/></td>
                                     <td><c:out value="${row.pec_reference}"/></td>
-                                    <td><button type="button" onclick="atualizarPeca(<c:out value="${row.pec_id}"/>);" class="btn btn-warning pull-right"><i class="fa fa-pencil"></i></button></td>
-                                    <td><button type="button" onclick="excluirPeca(<c:out value="${row.pec_id}"/>);" class="btn btn-danger pull-right"><i class="fa fa-trash-o"></i></button></td>
+                                    <td><button type="button" onclick="atualizarPeca(<c:out value="${row.pec_id}"/>);" class="btn btn-default pull-right"><i class="fa fa-pencil"></i></button></td>
+                                    <td><button type="button" onclick="excluirPeca(<c:out value="${row.pec_id}"/>);" class="btn btn-default pull-right"><i class="fa fa-trash-o"></i></button></td>
                                 </tr>
                             </c:forEach>
                           </tbody>
@@ -153,14 +153,9 @@
     </div>                             
 
 
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
