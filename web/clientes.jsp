@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/estilos.css"/>
     <link rel="stylesheet" href="css/fontawesome/css/font-awesome.min.css"/>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="css/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="css/ifav.ico" type="image/x-icon"/>
   </head>
 
   <body>
@@ -77,7 +77,6 @@
                               <th>Nome</th>
                               <th>E-mail</th>
                               <th>Telefone</th>
-                              <th>Vendedor</th>
                             </tr>
                           </thead>
                           <tbody>
