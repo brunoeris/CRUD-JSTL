@@ -55,7 +55,6 @@
         </div>
       </nav>
 
-      
         <div class="jumbotron">
             <h2>Bem Vindo!<br>
             <small><%= session.getAttribute("user_login") %></small><br>
