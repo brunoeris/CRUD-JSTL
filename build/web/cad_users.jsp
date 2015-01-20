@@ -23,7 +23,7 @@
                 
                 <h3 class="text-center bg-primary">Cadastro de Usuários</h3><br><br>
                 
-                <form class="form-horizontal" action="actions/cad_users.jsp">
+                <form class="form-horizontal" action="form_submit/cad_users.jsp">
                     <div class="form-group">
                       <label for="login" class="col-sm-2 control-label">Usuário</label>
                       <div class="col-sm-8">

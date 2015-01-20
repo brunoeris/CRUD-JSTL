@@ -49,7 +49,7 @@
               <li class="text-center"><a href="pecas.jsp">Peças</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li class="active text-center"><a href="actions/logout.jsp">SAIR<span class="sr-only">(current)</span></a></li>
+              <li class="active text-center"><a href="form_submit/logout.jsp">SAIR<span class="sr-only">(current)</span></a></li>
             </ul>
           </div>
         </div>

@@ -49,7 +49,7 @@
               <li class="text-center"><a href="pecas.jsp">Peças</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li class="active text-center"><a href="actions/logout.jsp">SAIR<span class="sr-only">(current)</span></a></li>
+              <li class="active text-center"><a href="form_submit/logout.jsp">SAIR<span class="sr-only">(current)</span></a></li>
             </ul>
           </div>
         </div>
@@ -77,7 +77,7 @@
         <div class="container">
             <c:forEach var="row" items="${result.rows}">
             <div class="row">
-                 <form class="form-horizontal" action="actions/cli_edit.jsp" method="post">  
+                 <form class="form-horizontal" action="form_submit/cli_edit.jsp" method="post">  
                 <div class="col-md-8 center-block">
                    <div class="form-group">
                     <label  class="col-sm-2 control-label">Nome</label>

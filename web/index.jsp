@@ -28,7 +28,7 @@
                </div>
                     <h1 class="form-signin-heading text-center">Info Store</h1>
                 
-                <form class="form-signin text-center" action="actions/login.jsp" role="form" method="post">                    
+                <form class="form-signin text-center" action="form_submit/login.jsp" role="form" method="post">                    
                     <input type="text" name="login" class="form-control" placeholder="Usuário" required autofocus>
                     <input type="password" name="password" class="form-control" placeholder="Senha" required>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>

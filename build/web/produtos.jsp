@@ -47,7 +47,7 @@
               <li class="text-center"><a href="pecas.jsp">Peças</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li class="active text-center"><a href="actions/logout.jsp">SAIR<span class="sr-only">(current)</span></a></li>
+              <li class="active text-center"><a href="form_submit/logout.jsp">SAIR<span class="sr-only">(current)</span></a></li>
             </ul>
           </div>
         </div>
@@ -109,7 +109,7 @@
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">          
-          <form class="form-horizontal" action="actions/prod_insert.jsp">  
+          <form class="form-horizontal" action="form_submit/prod_insert.jsp">  
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <h4 class="modal-title" id="myModalLabel">Cadastrar Produto</h4>
