@@ -26,7 +26,7 @@
     </c:if>  
       
     <div class="bg-default navbar-top">
-        <h4 class="text-center"><i class="fa fa-info-circle fa-4x"></i></h4><h2 class="text-center logotop"><a href="main.jsp" >Info Store</a></h2>   
+        <h4 class="text-center"><span class="text-center logotop"><a href="main.jsp" ><b>Info Store </b></a></span><i class="fa fa-info-circle fa-2x"></i></h4>   
     </div>
     
     <div class="container">
@@ -60,7 +60,7 @@
           <div class="row">
               <blockquote class="col-md-12 text-center"> 
                   <h2 class="text-center">Clientes<br><h4>Atualizar dados de cliente.</h4></h2><br>
-                  <a type="button" class="btn btn-default btn-lg" href="clientes.jsp">VOLTAR</a>
+                  <a type="button" class="btn btn-default" href="clientes.jsp">VOLTAR</a>
               </blockquote>
           </div>
       </div>
@@ -83,25 +83,25 @@
                     <label  class="col-sm-2 control-label">Nome</label>
                     <div class="col-sm-10">
                         <input type="hidden" value="${param.id}" name="id"/>
-                      <input type="text" class="form-control" name="name" value="${row.cli_name}">
+                      <input type="text" class="form-control" name="name" value="${row.cli_name}" autofocus required>
                     </div>
                   </div>
                   
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Email</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="mail" value="${row.cli_mail}">
+                          <input type="email" class="form-control" name="mail" value="${row.cli_mail}" required>
                         </div>
                       </div>
                      <div class="form-group">
                         <label class="col-sm-2 control-label">Telefone</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="phone" value="${row.cli_phone}">
+                          <input type="tel" class="form-control" name="phone" value="${row.cli_phone}" required>
                         </div>
                       </div>
                      <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                          <button type="submit" class="btn btn-default">Atualizar</button>
+                          <button type="submit" class="btn btn-primary">Atualizar</button>
                         </div>
                       </div>
                 </div>

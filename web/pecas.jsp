@@ -25,7 +25,7 @@
         </c:if>
       
     <div class="bg-default navbar-top">
-        <h4 class="text-center"><i class="fa fa-info-circle fa-4x"></i></h4><h2 class="text-center logotop"><a href="main.jsp" >Info Store</a></h2>   
+        <h4 class="text-center"><span class="text-center logotop"><a href="main.jsp" ><b>Info Store </b></a></span><i class="fa fa-info-circle fa-2x"></i></h4>   
     </div>
     
     <div class="container">
@@ -58,7 +58,7 @@
           <div class="row">
               <blockquote class="col-md-12 text-center"> 
                   <h2 class="text-center">Peças<br><h4>Lista de peças disponíveis.</h4></h2><br>
-                  <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Cadastrar Peça</button>
+                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Cadastrar Peça</button>
               </blockquote>
           </div>
       </div>
@@ -121,25 +121,25 @@
                   <div class="form-group">
                     <label  class="col-sm-2 control-label">Tipo</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="type" placeholder="Placa mãe, memória, disco rigido">
+                        <input type="text" class="form-control" name="type" placeholder="Placa mãe, memória, disco rigido" autofocus required>
                     </div>
                   </div>
                   <div class="form-group">
                     <label  class="col-sm-2 control-label">Marca</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="mark" placeholder="Corsair, Intel, AMD, Kingston">
+                      <input type="text" class="form-control" name="mark" placeholder="Corsair, Intel, AMD, Kingston" required>
                     </div>
                   </div>
                 <div class="form-group">
                     <label  class="col-sm-2 control-label">Descrição</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="details" placeholder="Descreva a peça">
+                      <input type="text" class="form-control" name="details" placeholder="Descreva a peça" required>
                     </div>
                   </div>
                   <div class="form-group">
                     <label  class="col-sm-2 control-label">Referência</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="reference">
+                      <input type="text" class="form-control" name="reference" required>
                     </div>
                   </div>
             </div>

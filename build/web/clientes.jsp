@@ -26,7 +26,7 @@
         </c:if>  
        
     <div class="bg-default navbar-top">
-        <h4 class="text-center"><i class="fa fa-info-circle fa-4x"></i></h4><h2 class="text-center logotop"><a href="main.jsp" >Info Store</a></h2>   
+        <h4 class="text-center"><span class="text-center logotop"><a href="main.jsp" ><b>Info Store </b></a></span><i class="fa fa-info-circle fa-2x"></i></h4>   
     </div>
     
     <div class="container">
@@ -59,8 +59,8 @@
           <div class="row">
               <blockquote class="col-md-12 text-center"> 
                   <h2 class="text-center">Gerenciamento de clientes</h2><br>
-                  <a href="cli_relatorio.jsp" target="_blank">Relatório de clientes</a>
-                  <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Cadastrar Cliente</button>
+                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Cadastrar Cliente</button><br><br>
+                  <a href="cli_relatorio.jsp" target="_blank"><u>Relatório de clientes</u></a>
               </blockquote>
           </div>
       </div>
@@ -119,19 +119,19 @@
                   <div class="form-group">
                     <label  class="col-sm-2 control-label">Nome</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="name" placeholder="Nome do cliente">
+                        <input type="text" class="form-control" name="name" placeholder="Nome do cliente" autofocus required>
                     </div>
                   </div>
                   <div class="form-group">
                     <label  class="col-sm-2 control-label">Email</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="mail" placeholder="E-mail do cliente">
+                      <input type="email" class="form-control" name="mail" placeholder="E-mail do cliente" required>
                     </div>
                   </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Telefone</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="phone" placeholder="Telefone do cliente">
+                          <input type="tel" class="form-control" name="phone" placeholder="Telefone do cliente" required>
                         </div>
                       </div>
             </div>

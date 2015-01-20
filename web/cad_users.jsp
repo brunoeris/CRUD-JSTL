@@ -33,7 +33,13 @@
                     <div class="form-group">
                       <label for="senha" class="col-sm-2 control-label">Senha</label>
                       <div class="col-sm-8">
-                          <input type="password" class="form-control" name="password" placeholder="Informe sua senha" required>
+                          <input type="password" class="form-control" name="password" id="password1" placeholder="Informe sua senha" required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="senha" class="col-sm-2 control-label">Confirmação de senha</label>
+                      <div class="col-sm-8">
+                          <input type="password" class="form-control" id="password2" placeholder="Informe sua senha novamente" required>
                       </div>
                     </div>
 
@@ -48,5 +54,21 @@
         </div>  
     </div> 
     <script src="bootstrap.min.js"></script>
+    
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById("password1").onchange = validatePassword;
+            document.getElementById("password2").onchange = validatePassword;
+        };
+        function validatePassword(){
+        var pass2=document.getElementById("password2").value;
+        var pass1=document.getElementById("password1").value;
+        if(pass1!==pass2)
+            document.getElementById("password2").setCustomValidity("Senhas não conferem!");
+        else
+            document.getElementById("password2").setCustomValidity('');
+        }
+     </script>
+    
   </body>
 </html>

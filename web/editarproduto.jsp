@@ -25,7 +25,7 @@
         </c:if>  
       
     <div class="bg-default navbar-top">
-        <h4 class="text-center"><i class="fa fa-info-circle fa-4x"></i></h4><h2 class="text-center logotop"><a href="main.jsp" >Info Store</a></h2>   
+        <h4 class="text-center"><span class="text-center logotop"><a href="main.jsp" ><b>Info Store </b></a></span><i class="fa fa-info-circle fa-2x"></i></h4>   
     </div>
     
     <div class="container">
@@ -59,7 +59,7 @@
           <div class="row">
               <blockquote class="col-md-12 text-center"> 
                   <h2 class="text-center">Produtos<br><h4>Editar produto.</h4></h2><br>
-                  <a type="button" class="btn btn-default btn-lg" href="produtos.jsp">VOLTAR</a>
+                  <a type="button" class="btn btn-default" href="produtos.jsp">VOLTAR</a>
               </blockquote>
           </div>
       </div>
@@ -82,30 +82,30 @@
                     <label  class="col-sm-2 control-label">Tipo</label>
                     <div class="col-sm-10">
                       <input type="hidden" value="${param.id}" name="id">
-                      <input type="text" class="form-control" name="type" value="${row.pro_type}">
+                      <input type="text" class="form-control" name="type" value="${row.pro_type}" autofocus required>
                     </div>
                   </div>
                   <div class="form-group">
                     <label  class="col-sm-2 control-label">Marca</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="mark" value="${row.pro_mark}">
+                        <input type="text" class="form-control" name="mark" value="${row.pro_mark}" required>
                     </div>
                   </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Descrição</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="details" value="${row.pro_details}">
+                          <input type="text" class="form-control" name="details" value="${row.pro_details}" required>
                         </div>
                       </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Referência</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="reference" value="${row.pro_reference}">
+                          <input type="text" class="form-control" name="reference" value="${row.pro_reference}" required>
                         </div>
                       </div>
                      <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                          <button type="submit" class="btn btn-default">Atualizar</button>
+                          <button type="submit" class="btn btn-primary">Atualizar</button>
                         </div>
                       </div>
                 </div>
