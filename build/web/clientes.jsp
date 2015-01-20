@@ -59,6 +59,7 @@
           <div class="row">
               <blockquote class="col-md-12 text-center"> 
                   <h2 class="text-center">Gerenciamento de clientes</h2><br>
+                  <a href="cli_relatorio.jsp" target="_blank">Relatório de clientes</a>
                   <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Cadastrar Cliente</button>
               </blockquote>
           </div>
