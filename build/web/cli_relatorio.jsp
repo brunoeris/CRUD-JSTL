@@ -1,50 +1,39 @@
-<%@ page contentType="application/pdf" %>
- 
-<%@ page trimDirectiveWhitespaces="true"%>
- 
-<%@ page import="net.sf.jasperreports.engine.*" %>
-<%@ page import="java.io.File" %>
-<%@ page import="java.io.FileInputStream" %>
-<%@ page import="java.io.FileNotFoundException" %>
-<%@ page import="java.io.InputStream" %>
+<%@ page import="java.io.*" %>
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.DriverManager" %>
-<%@ page import="java.sql.SQLException" %>
- 
-<%
-    Connection conn=null;
-     try {
-        //Connecting to the MySQL database
- 
-        Class.forName("com.mysql.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/infostore?user=root&password=");
- 
-        //Loading Jasper Report File from Local file system
- 
-        String jrxmlFile = session.getServletContext().getRealPath(request.getContextPath())+"/clientes.jrxml";
-        InputStream input = new FileInputStream(new File(jrxmlFile));
- 
-        //Generating the report
- 
-        JasperReport jasperReport = JasperCompileManager.compileReport(input);
-        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, conn);
- 
-        //Exporting the report as a PDF
- 
-        JasperExportManager.exportReportToPdfStream(jasperPrint, response.getOutputStream());
- 
-    } catch (FileNotFoundException e) {
-        e.printStackTrace();
-    } catch (JRException e) {
-        e.printStackTrace();
-    } catch (ClassNotFoundException e) {
-        e.printStackTrace();
-    } catch (SQLException e) {
-        e.printStackTrace();
-    }
-    finally {
-        if(conn!=null){
-            conn.close();
-        }
-    }
-%>
+<%@ page import="java.util.HashMap" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="net.sf.jasperreports.engine.*" %>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <%
+            Connection conn = null;
+            
+            try {
+                Class.forName("com.mysql.jdbc.Driver").newInstance();
+                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/infostore", "root", "");
+            File reportFile = new File(application.getRealPath("clientes.jasper"));    
+            
+            byte[] bytes = JasperRunManager.runReportToPdf(reportFile.getPath(), null, conn);
+            
+            response.setContentType("application/pdf");
+            response.setContentLength(bytes.length);
+            ServletOutputStream outStream = response.getOutputStream();
+            outStream.write(bytes, 0, bytes.length);
+            outStream.flush();
+            outStream.close();
+            
+            } catch (Exception ex) {
+                out.println("Erro");
+            }
+            
+        %>
+    </body>
+</html>

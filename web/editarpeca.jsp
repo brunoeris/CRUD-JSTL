@@ -68,7 +68,8 @@
                        url="jdbc:mysql://localhost/infostore"
                        user="root" password=""/>
     <sql:query dataSource="${ds}" var="result">
-            SELECT * from pecas;
+            SELECT * from pecas where pec_id=?;
+      <sql:param value="${param.id}" />;
     </sql:query>
     <section>
         <div class="container">

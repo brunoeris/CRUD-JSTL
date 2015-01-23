@@ -58,7 +58,8 @@
           <div class="row">
               <blockquote class="col-md-12 text-center"> 
                   <h2 class="text-center">Peças<br><h4>Lista de peças disponíveis.</h4></h2><br>
-                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Cadastrar Peça</button>
+                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Cadastrar Peça</button><br><br>
+                  <a href="pec_relatorio.jsp" target="_blank"><u>Relatório de peças</u></a>
               </blockquote>
           </div>
       </div>

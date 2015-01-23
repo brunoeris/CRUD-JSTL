@@ -57,7 +57,8 @@
           <div class="row">
               <blockquote class="col-md-12 text-center">  
                   <h2 class="text-center">Produtos<br><h4>Lista de Produtos</h4></h2><br>
-                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Cadastrar Produto</button>
+                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Cadastrar Produto</button><br><br>
+                  <a href="pro_relatorio.jsp" target="_blank"><u>Relatório de produtos</u></a>
               </blockquote>
           </div>
       </div>
