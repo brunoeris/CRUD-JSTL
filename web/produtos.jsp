@@ -41,7 +41,8 @@
             <a class="navbar-brand text-uppercase" href="main.jsp">  </a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">  
+            <ul class="nav navbar-nav">
+              <li class="text-center"><a href="main.jsp">Início</a></li>
               <li class="text-center"><a href="clientes.jsp">Clientes</a></li>
               <li class="text-center"><a href="produtos.jsp">Produtos</a></li>
               <li class="text-center"><a href="pecas.jsp">Peças</a></li>
