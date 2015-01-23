@@ -71,7 +71,7 @@
         <div class="container">
             <div class="row"> 
                 <div class="col-md-12">
-                    <div class="table-responsive">
+                    <div class="table-responsive bgtable">
                         <table class="table table-striped table-bordered">
                           <thead>
                             <tr>
@@ -111,7 +111,7 @@
                              
                                
  <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">          
           <form class="form-horizontal" action="form_submit/peca_insert.jsp" method="post">  
