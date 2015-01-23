@@ -26,13 +26,13 @@
                     </div>
                    <div class="col-md-4 text-center"></div>
                </div>
-                    <h1 class="form-signin-heading text-center">Info Store</h1>
+                    <h1 class="form-signin-heading text-center text-shadow">Info Store</h1>
                 
-                <form class="form-signin text-center" action="form_submit/login.jsp" role="form" method="post">                    
+                <form class="form-signin text-center text-shadow" action="form_submit/login.jsp" role="form" method="post">                    
                     <input type="text" name="login" class="form-control" placeholder="Usuário" required autofocus>
                     <input type="password" name="password" class="form-control" placeholder="Senha" required>
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
-                    <a class="btn btn-lg btn-link " href="cad_users.jsp">Cadastre-se</a>
+                    <button class="btn btn-lg btn-primary btn-block text-shadow" type="submit">Entrar</button>
+                    <a class="btn btn-lg btn-link text-shadow" href="cad_users.jsp">Cadastre-se</a>
                 </form>
             </div>
         </div>  
