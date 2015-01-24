@@ -26,7 +26,7 @@
         </c:if>  
       
     <div class="bg-default navbar-top">
-        <h4 class="text-center"><span class="text-center logotop"><a href="main.jsp" ><b>Info Store </b></a></span><i class="fa fa-info-circle fa-2x"></i></h4>   
+        <h4 class="text-center"><span class="text-center logotop"><a href="../main.jsp" ><b>Info Store </b></a></span><i class="fa fa-info-circle fa-2x"></i></h4>   
     </div>
     
     <div class="container">
@@ -43,7 +43,8 @@
             
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">  
+            <ul class="nav navbar-nav">
+              <li class="text-center"><a href="../main.jsp">Início</a></li>
               <li class="text-center"><a href="../clientes.jsp">Clientes</a></li>
               <li class="text-center"><a href="../produtos.jsp">Produtos</a></li>
               <li class="text-center"><a href="../pecas.jsp">Peças</a></li>
@@ -90,9 +91,14 @@
                         <label class="col-sm-2 control-label">Senha</label>
                         <div class="col-sm-10">
                           <input type="password" class="form-control" name="password" id="password1" placeholder="Digite uma nova senha" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Repita a senha</label>
+                        <div class="col-sm-10">
                           <input type="password" class="form-control" id="password2" placeholder="Confirme a nova senha" required>
                         </div>
-                      </div>
+                    </div>
                     
                      <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">

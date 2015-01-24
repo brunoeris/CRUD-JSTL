@@ -12,6 +12,7 @@ body {
   padding-top: 10px;
   padding-bottom: 20px;
   font-family: "Segoe UI","Segoe WP","Segoe Regular", sans-serif;
+  background: url(../img/bgpainel.jpg) no-repeat;
 }
 
 .navbar {
@@ -32,3 +33,9 @@ body {
 .logotop {
     font-size: 32px;
 }
+
+.bgtable {
+    background-color: #f2f2f2;
+}
+
+.text-shadow {text-shadow:0 0 10px rgba(0,0,0,0.7);}

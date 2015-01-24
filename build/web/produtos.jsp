@@ -138,7 +138,7 @@
                   <div class="form-group">
                     <label  class="col-sm-2 control-label">Referência</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="reference" pattern="[0-9]{6}" title="Referência deve conter 6 dígitos numéricos" required>
+                      <input type="text" class="form-control" name="reference">
                     </div>
                   </div>
             </div>

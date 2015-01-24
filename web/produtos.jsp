@@ -41,7 +41,8 @@
             <a class="navbar-brand text-uppercase" href="main.jsp">  </a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">  
+            <ul class="nav navbar-nav">
+              <li class="text-center"><a href="main.jsp">Início</a></li>
               <li class="text-center"><a href="clientes.jsp">Clientes</a></li>
               <li class="text-center"><a href="produtos.jsp">Produtos</a></li>
               <li class="text-center"><a href="pecas.jsp">Peças</a></li>
@@ -68,7 +69,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                     <div class="table-responsive">
+                     <div class="table-responsive bgtable">
                         <table class="table table-striped table-bordered">
                           <thead>
                             <tr>
@@ -107,7 +108,7 @@
     </section>
                              
  <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">          
           <form class="form-horizontal" action="form_submit/prod_insert.jsp">  
@@ -137,7 +138,7 @@
                   <div class="form-group">
                     <label  class="col-sm-2 control-label">Referência</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="reference">
+                        <input type="text" class="form-control" name="reference" pattern="[0-9]{6}" title="Referência deve conter 6 dígitos numéricos" required>
                     </div>
                   </div>
             </div>
