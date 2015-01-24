@@ -43,8 +43,7 @@
             
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav"> 
-              <li class="text-center"><a href="main.jsp">Início</a></li>  
+            <ul class="nav navbar-nav">  
               <li class="text-center"><a href="clientes.jsp">Clientes</a></li>
               <li class="text-center"><a href="produtos.jsp">Produtos</a></li>
               <li class="text-center"><a href="pecas.jsp">Peças</a></li>
@@ -71,7 +70,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="table-responsive bgtable">
+                    <div class="table-responsive">
                         <table class="table table-striped table-bordered">
                           <thead>
                             <tr>
@@ -108,7 +107,7 @@
     </section>
                              
     <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">          
           <form class="form-horizontal" action="form_submit/cad_client.jsp">  
@@ -132,7 +131,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Telefone</label>
                         <div class="col-sm-10">
-                          <input type="tel" class="form-control" name="phone" placeholder="Telefone do cliente" pattern="[0-9]{10,11}" title="Telefone deve conter 10 ou 11 dígitos numéricos (com DDD)" required>
+                          <input type="tel" class="form-control" name="phone" placeholder="Telefone do cliente" required>
                         </div>
                       </div>
             </div>

@@ -11,7 +11,7 @@
   <body>
     <c:if test="${ empty param.name or param.mail or empty param.phone}">
       <c:redirect url="../clientes.jsp" >
-              <c:param name="errMsg" value="Erro na leitura de dados do cliente" />
+              <c:param name="errMsg" value="PErro na leitura de dados do cliente" />
       </c:redirect>
        
     </c:if>

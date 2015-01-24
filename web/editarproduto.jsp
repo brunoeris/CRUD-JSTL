@@ -42,8 +42,7 @@
             
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li class="text-center"><a href="main.jsp">Início</a></li>
+            <ul class="nav navbar-nav">  
               <li class="text-center"><a href="clientes.jsp">Clientes</a></li>
               <li class="text-center"><a href="produtos.jsp">Produtos</a></li>
               <li class="text-center"><a href="pecas.jsp">Peças</a></li>
@@ -101,7 +100,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Referência</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="reference" value="${row.pro_reference}" pattern="[0-9]{6}" title="Referência deve conter 6 dígitos numéricos" required>
+                          <input type="text" class="form-control" name="reference" value="${row.pro_reference}" required>
                         </div>
                       </div>
                      <div class="form-group">

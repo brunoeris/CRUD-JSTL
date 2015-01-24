@@ -43,8 +43,7 @@
             
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li class="text-center"><a href="main.jsp">Início</a></li>  
+            <ul class="nav navbar-nav">  
               <li class="text-center"><a href="clientes.jsp">Clientes</a></li>
               <li class="text-center"><a href="produtos.jsp">Produtos</a></li>
               <li class="text-center"><a href="pecas.jsp">Peças</a></li>
@@ -97,7 +96,7 @@
                      <div class="form-group">
                         <label class="col-sm-2 control-label">Telefone</label>
                         <div class="col-sm-10">
-                          <input type="tel" class="form-control" name="phone" value="${row.cli_phone}" pattern="[0-9]{10,11}" title="Telefone deve conter 10 ou 11 dígitos numéricos (com DDD)" required>
+                          <input type="tel" class="form-control" name="phone" value="${row.cli_phone}" required>
                         </div>
                       </div>
                      <div class="form-group">
