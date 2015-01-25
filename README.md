@@ -1,4 +1,4 @@
-# CRUD-JSTL - Info Store
+#Info Store
 CRUD JSTL and report generator with ireport.
 
 This project do:
